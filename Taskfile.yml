@@ -1,0 +1,10 @@
+version: "3"
+
+
+tasks:
+  generate:
+    aliases:
+      - gen
+    desc: "Generation code from protobuf file"
+    cmds: 
+      - protoc -I proto/sso proto/sso/sso.proto --go_out=protos/gen --go_opt=paths=source_relative --go-grpc_out=protos/gen --go-grpc_opt=paths=source_relative
